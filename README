@@ -1,0 +1,6 @@
+﻿lnkdump2000 - view Windows .LNK files
+
+The released AppImages were built on Debian 11 (bullseye) and require at least Glibc 2.31 to run.
+
+Build-depends:
+- fltk 1.3
