@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=lnkdump2k
+Name=LnkDump2000
+Icon=lnkdump2k
+Categories=Utility

@@ -1,0 +1,23 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0308
+header_name {.h}
+code_name {.cxx}
+decl {\#include "main.h"} {private local
+}
+
+Function {about_window()} {open
+} {
+  Fl_Window {} {
+    label {About lnkdump2000} open
+    xywh {893 358 570 345} type Double resizable visible
+  } {
+    Fl_Text_Display ui_about_text {selected
+      xywh {5 5 560 305} labelfont 4 textfont 4 resizable
+    }
+    Fl_Button {} {
+      label Ok
+      callback {state->close_about();}
+      xywh {5 315 560 25}
+    }
+  }
+}

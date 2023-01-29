@@ -1,0 +1,69 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0308
+header_name {.h}
+code_name {.cxx}
+decl {\#include "main.h"} {public global
+}
+
+Function {make_window()} {open
+} {
+  Fl_Window main_win {
+    label Lnk open
+    private xywh {911 212 640 500} type Double resizable
+    class LnkWindow visible
+  } {
+    Fl_Group button_group {open
+      private xywh {5 470 630 25}
+    } {
+      Fl_Button {} {
+        label About
+        callback {state->open_about();}
+        xywh {385 470 80 25}
+      }
+      Fl_Button close_button {
+        label Close
+        user_data main_win
+        callback {state->close_file_cb(v);}
+        private xywh {555 470 80 25}
+      }
+      Fl_Button open_button {
+        label Open
+        callback {state->open_file_cb();}
+        private xywh {470 470 80 25}
+      }
+      Fl_Choice codepages {
+        label Codepage
+        user_data main_win
+        callback {state->change_codepage_cb(v);} open
+        private xywh {190 470 190 25} down_box BORDER_BOX
+        code0 {main_win->m_codepages = codepages;}
+      } {}
+      Fl_Check_Button show_all {
+        label {Show All}
+        user_data main_win
+        callback {state->show_all_cb(v);}
+        private xywh {10 470 95 25} down_box DOWN_BOX
+        code0 {main_win->m_show_all = show_all;}
+      }
+    }
+    Fl_Group content_group {open
+      private xywh {0 5 635 460} resizable
+    } {
+      Fl_Output file_name {
+        private xywh {5 5 630 25}
+        code0 {main_win->m_title = file_name;}
+      }
+      Fl_Browser content {
+        user_data main_win
+        callback {state->context_menu_cb(v);}
+        private xywh {5 35 630 430} type Select
+        code0 {main_win->m_content = content;}
+        class Fl_Browser
+      }
+      Fl_Box {} {
+        label label
+        xywh {5 35 630 430} hide deactivate resizable
+      }
+    }
+  }
+}

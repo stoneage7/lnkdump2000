@@ -1,0 +1,35 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0308
+header_name {.h}
+code_name {.cxx}
+decl {\#include "main.h" // from main project} {public global
+}
+
+Function {blank_window()} {open
+} {
+  Fl_Window blank_win {
+    label lnkdump2000 open
+    private xywh {778 659 310 110} type Double resizable
+    class BlankWindow visible
+  } {
+    Fl_Group {} {open
+      xywh {5 5 300 100} resizable
+    } {
+      Fl_Button btn_about {
+        label About
+        callback {state->open_about();}
+        xywh {5 5 300 30}
+      }
+      Fl_Button btn_open {
+        label Open
+        callback {state->open_file_cb();}
+        xywh {5 40 300 30}
+      }
+      Fl_Button btn_close {
+        label Close
+        callback {state->close_blank();}
+        xywh {5 75 300 30}
+      }
+    }
+  }
+}
