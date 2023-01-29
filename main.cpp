@@ -59,6 +59,11 @@ static const char *usage_text =
     "Return value is always 0 if GUI is showing,\n"
     "otherwise 0 for success, 1 for parse error, 2 for command line error.\n";
 
+static const char *shill_text =
+    "You can send me some crypto if you're a cool hacker:\n"
+    "XMR: 82tcaucC9ZHMSdT86omiTpVN2oQRghkHcRmRWhpLP1xDY2XMdDFRH77Jiuwh1Mdq6Y2M5mfBvwWGGCNyNhMWziPESWt7zuu\n"
+    "BTC: 15wkwFMSYp7VGEoJ4U6WNNkgwjw8i39fFH\n\n";
+
 int open_files(const std::list<std::string>& names);
 // }}}
 
@@ -225,6 +230,7 @@ MainGui::MainGui()
     }
     p->m_aboutText = new Fl_Text_Buffer();
     p->m_aboutText->text(about_blurb);
+    p->m_aboutText->append(shill_text);
     p->m_aboutText->append(usage_text);
     p->m_aboutWindow = about_window();
     ui_about_text->buffer(p->m_aboutText);
