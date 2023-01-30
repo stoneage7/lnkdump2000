@@ -4,3 +4,12 @@ The released AppImages were built on Debian 11 (bullseye) and require at least G
 
 Build-depends:
 - fltk 1.3
+
+What works:
+- Parsing basic structures, link header, string data -- displays target name in most cases.
+- Various Shell Id types are poorly documented, but effort is made to parse common ones.
+
+What does not work:
+- Undocumented fields in shellids, PropertyStore data, BagMRU structures, most 0xBEEFxxxx
+  extension blocks (only beef0004 works), subshellids.
+

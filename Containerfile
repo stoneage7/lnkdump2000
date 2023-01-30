@@ -1,7 +1,5 @@
 
 FROM debian:bullseye
 
-RUN apt-get update
-RUN apt-get -y upgrade
-RUN apt-get -y install build-essential cmake libfltk1.3-dev
+RUN apt-get update 1>&2 && apt-get install -y build-essential cmake libfltk1.3-dev file 1>&2
 
